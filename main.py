@@ -3,7 +3,7 @@ from pygame import *
 
 
 window = display.set_mode((700, 600))
-display.set_caption('Пинг - понг')
+display.set_caption('Пин - понг')
 color_fon = (173, 216, 230)
 
 font.init()
