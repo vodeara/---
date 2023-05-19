@@ -1,10 +1,10 @@
+
 from pygame import *
 
 
-window = display.set_mode((700, 500))
+window = display.set_mode((700, 600))
 display.set_caption('Пинг - понг')
-color_fon = (215, 123, 0)
-background = transform.scale(image.load('gg.webp'), (700,500))
+color_fon = (173, 216, 230)
 
 font.init()
 font1 = font.Font(None, 100)
@@ -31,10 +31,8 @@ class GameSprite(sprite.Sprite):
 class Player(GameSprite):
     def update_l(self):
         keys_pressed = key.get_pressed()
-
         if keys_pressed[K_w]  and self.rect.y > 20:
             self.rect.y -= self.speed
-
         if keys_pressed[K_s]  and self.rect.y < 480:
             self.rect.y += self.speed
     def update_r(self):
@@ -74,9 +72,9 @@ class Ball(GameSprite):
             finish = True
             window.blit(lose, (200,200))
 
-player1 = Player('i.webp', 5, 275, 25, 100, 5)
-player2 = Player('i.webp', 690, 275, 25, 100, 5)
-ball = GameSprite('eww.png', 200, 200, 50, 50, 5)
+player1 = Player('raketka.png', 50, 275, 25, 100, 5)
+player2 = Player('raketka.png', 620, 275, 25, 100, 5)
+ball = GameSprite('asteroid.png', 200, 200, 50, 50, 5)
 while game:
     for e in event.get():
         if e.type == QUIT:
@@ -95,6 +93,12 @@ while game:
 
     display.update()
     clock.tick(FPS)
+
+
+
+   
+
+
 
 
 
